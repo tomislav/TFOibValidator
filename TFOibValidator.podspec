@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name     = 'TFOibValidator'
-  s.version  = '1.0.0'
+  s.version  = '1.0.1'
   s.license  = { :type => "BSD", :file => "LICENSE" }
   s.summary  = 'Croatian personal identification number (OIB) validator for REValidation'
   s.homepage = 'https://github.com/tomislav/TFOibValidator'
