@@ -27,24 +27,21 @@
 
 + (BOOL)verifyOib:(NSString*)oib
 {
-	if (oib.length != 11) return false;
+    if (oib.length != 11) return false;
 
-	int a = 10;
-	for (int i=0; i<10; i++)
-	{
+    int a = 10;
+    for (int i=0; i<10; i++) {
+        a += [[oib substringWithRange:NSMakeRange(i, 1)] intValue];
+        a %= 10;
+        if (a == 0) a = 10;
+        a *= 2;
+        a %= 11;
+    }
 
-		a += [[oib substringWithRange:NSMakeRange(i, 1)] intValue];
-		a %= 10;
-		if (a == 0) a = 10;
-		a *= 2;
-		a %= 11;
-	}
+    int control = 11 - a;
+    if (control == 10) control  = 0;
 
-	int control = 11 - a;
-	if (control == 10) control  = 0;
-
-	return control == [[oib substringWithRange:NSMakeRange(10, 1)] intValue];
-
+    return control == [[oib substringWithRange:NSMakeRange(10, 1)] intValue];
 }
 
 @end
