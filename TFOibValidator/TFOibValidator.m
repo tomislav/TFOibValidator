@@ -19,7 +19,7 @@
 {
     NSString *string = object ? object : @"";
 
-    if (![REOIBValidator verifyOib:string])
+    if (![TFOibValidator verifyOib:string])
         return [NSError re_validationErrorForDomain:@"com.REValidation.oib", name];
 
     return nil;

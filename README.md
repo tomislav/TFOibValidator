@@ -19,8 +19,9 @@ Croatian personal identification number (OIB) validator for [REValidation](https
 NSString *oibString = @"12345678901";
 NSArray *errors = [REValidation validateObject:oibString name:@"OIB" validators:@[ @"presence", @"oib" ]];
 
-for (NSError *error in errors)
-    NSLog(@"Error: %@", error.localizedDescription);
+for (NSError *error in errors) {
+  if ([error.domain isEqualToString:@"com.REValidation.oib"]) NSLog(@"OIB not valid");
+}
 ```
 
 ## Contact

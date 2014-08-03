@@ -6,6 +6,7 @@
 //
 
 #import "TFOibValidator.h"
+#import <REValidator.h>
 
 @interface TFOibValidator : REValidator
 
